@@ -1,0 +1,70 @@
+{
+  "name": "itinerisltd/acf-gutenblocks",
+  "description": "Easily create Gutenberg Blocks with Advanced Custom Fields",
+  "type": "wordpress-plugin",
+  "keywords": [
+    "acf",
+    "advanced",
+    "custom",
+    "fields",
+    "wordpress",
+    "roots",
+    "bedrock",
+    "sage"
+  ],
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Itineris Limited",
+      "email": "hello@itineris.co.uk",
+      "homepage": "https://itineris.co.uk/",
+      "role": "Company"
+    },
+    {
+      "name": "Lee Hanbury-Pickett",
+      "email": "lee.hanbury@gmail.com",
+      "homepage": "https://codepunchers.co.uk",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "composer/installers": "^1.5"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "itinerisltd/itineris-wp-coding-standards": "^0.2"
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.x-dev"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Itineris\\AcfGutenblocks\\": "src/"
+    }
+  },
+  "scripts": {
+    "style:check": "phpcs",
+    "style:fix": "phpcbf",
+    "pretag": [
+      "composer update --no-suggest",
+      "@check-style",
+      "composer normalize",
+      "doctoc README.md",
+      "github_changelog_generator --no-verbose"
+    ]
+  },
+  "support": {
+    "email": "hello@itineris.co.uk",
+    "issues": "https://github.com/ItinerisLtd/acf-gutenblocks/issues",
+    "source": "https://github.com/ItinerisLtd/acf-gutenblocks"
+  }
+}

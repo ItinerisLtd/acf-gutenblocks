@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<ruleset name="AcfGutenblockBuilder">
+    <!-- Check all files under project root -->
+    <file>./</file>
+
+    <!-- Show colors in console -->
+    <arg value="-colors"/>
+
+    <!-- Show progress and sniff codes in all reports -->
+    <arg value="sp"/>
+
+    <!-- Install custom rulesets -->
+    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/automattic/vipwpcs,vendor/itinerisltd/itineris-wp-coding-standards"/>
+
+    <!-- Use Itineris WP Coding Standards -->
+    <rule ref="Itineris"/>
+
+    <!-- TODO: Change everything below! -->
+    <!-- TODO: Exclude specific rules if necessary -->
+
+    <!-- TODO: Exclude some files -->
+    <exclude-pattern>/acf-gutenblocks.php</exclude-pattern>
+    <exclude-pattern>/tests/*</exclude-pattern>
+    <exclude-pattern>/vendor/*</exclude-pattern>
+
+    <!-- TODO: Define minimum supported WordPress version -->
+    <config name="minimum_supported_wp_version" value="4.9"/>
+
+    <!-- TODO: Define expected text domains -->
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array" value="acf-gutenblocks"/>
+        </properties>
+    </rule>
+
+    <rule ref="WordPress.NamingConventions.ValidHookName.UseUnderscores">
+      <exclude-pattern>/*.php</exclude-pattern>
+  </rule>
+</ruleset>
