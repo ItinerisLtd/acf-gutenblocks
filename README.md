@@ -9,6 +9,6 @@ Easily create Gutenberg Blocks with Advanced Custom Fields.
 * [Advanced Custom Fields](https://www.advancedcustomfields.com/) >= 5.8.0
 
 ## Development
-Clone repository to your `plugins` directory.
+Clone repository to your `plugins` directory and run `composer install` within.
 
 ## Further documentation coming soon
