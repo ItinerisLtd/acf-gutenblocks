@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="AcfGutenblockBuilder">
+<ruleset name="AcfGutenblocks">
     <!-- Check all files under project root -->
     <file>./</file>
 
