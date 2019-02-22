@@ -118,10 +118,13 @@ class Block
      */
     public function __construct(array $settings)
     {
+        // Path related definitions.
         $reflection     = new \ReflectionClass($this);
         $block_path     = $reflection->getFileName();
         $directory_path = dirname($block_path);
         $this->name     = Util::camelToKebab(basename($block_path, '.php'));
+
+        // User definitions.
         $this->enabled  = $settings['enabled'] ?? true;
         $this->dir      = $settings['dir'] ?? $directory_path;
         $this->icon     = $settings['icon'] ?? apply_filters('acf_gutenblock_builder/default_icon', 'admin-generic');
@@ -139,6 +142,9 @@ class Block
         $this->category    = $details['category'];
         $this->icon        = $details['icon'];
         $this->supports    = $details['supports'];
+
+        // Set ACF Fields to the block.
+        $this->fields = $this->registerFields();
     }
 
     /**
@@ -150,6 +156,28 @@ class Block
     public function isEnabled(): bool
     {
         return $this->enabled;
+    }
+
+    /**
+     * User defined ACF fields
+     *
+     * @since 0.1.0
+     * @return array
+     */
+    protected function registerFields(): array
+    {
+        return [];
+    }
+
+    /**
+     * Get the block ACF fields
+     *
+     * @since 0.1.0
+     * @return array
+     */
+    public function getFields(): array
+    {
+        return $this->fields;
     }
 
     /**
@@ -282,5 +310,19 @@ class Block
             'align' => $this->getAlignment(),
             'supports' => $this->getSupports(),
         ];
+    }
+
+
+    public function init(): void
+    {
+        $block_data = $this->getBlockData();
+        $block_data['render_callback'] = [$this, 'renderBlockCallback'];
+        $fields = $this->getFields();
+
+        acf_register_block($block_data);
+
+        if (! empty($fields)) {
+            acf_add_local_field_group($fields);
+        }
     }
 }

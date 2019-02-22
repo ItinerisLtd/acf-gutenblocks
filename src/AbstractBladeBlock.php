@@ -39,12 +39,4 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
             'controller' => $this,
         ]);
     }
-
-    public function init(): void
-    {
-        $block_data = $this->getBlockData();
-        $block_data['render_callback'] = [$this, 'renderBlockCallback'];
-
-        acf_register_block($block_data);
-    }
 }

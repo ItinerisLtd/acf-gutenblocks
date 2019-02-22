@@ -6,7 +6,7 @@ namespace Itineris\AcfGutenblocks;
 
 abstract class AbstractBlock extends Block implements InitializableInterface
 {
-    public function fileExtension() : string
+    public function fileExtension(): string
     {
         return '.php';
     }
@@ -51,13 +51,5 @@ abstract class AbstractBlock extends Block implements InitializableInterface
         // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
         echo apply_filters('acf_gutenblock_builder/render_block_html_output', $html, $controller);
         // phpcs:enable
-    }
-
-    public function init(): void
-    {
-        $block_data = $this->getBlockData();
-        $block_data['render_callback'] = [$this, 'renderBlockCallback'];
-
-        acf_register_block($block_data);
     }
 }
