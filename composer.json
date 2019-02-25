@@ -12,7 +12,7 @@
     "bedrock",
     "sage"
   ],
-  "license": "GPL-2.0-or-later",
+  "license": "MIT",
   "authors": [
     {
       "name": "Itineris Limited",
