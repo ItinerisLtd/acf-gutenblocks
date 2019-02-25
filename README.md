@@ -106,6 +106,7 @@ class Testimonial extends AbstractBlock
         }
         return $items;
     }
+}
 ```
 
 ### Block constructors
