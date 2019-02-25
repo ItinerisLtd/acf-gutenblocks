@@ -95,14 +95,6 @@ class Block
     public $dir;
 
     /**
-     * The blocks directory URL.
-     *
-     * @since 0.1.0
-     * @var string $url
-     */
-    public $url;
-
-    /**
      * The blocks accessibility.
      *
      * @since 0.1.0
