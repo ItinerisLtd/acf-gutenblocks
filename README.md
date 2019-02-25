@@ -21,6 +21,7 @@ Easily create Gutenberg Blocks with Advanced Custom Fields.
         - [AbstractBlock](#abstractblock)
         - [AbstractBladeBlock](#abstractbladeblock)
 - [Controller](#controller)
+- [Fields](#fields)
 - [FAQ](#faq)
   - [Can I use a different template rendering option?](#can-i-use-a-different-template-rendering-option)
   - [Do I need to adhere to any structure or standard?](#do-i-need-to-adhere-to-any-structure-or-standard)
