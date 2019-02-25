@@ -21,6 +21,7 @@ Easily create Gutenberg Blocks with Advanced Custom Fields.
         - [AbstractBlock](#abstractblock)
         - [AbstractBladeBlock](#abstractbladeblock)
 - [Controller](#controller)
+- [Fields](#fields)
 - [FAQ](#faq)
   - [Can I use a different template rendering option?](#can-i-use-a-different-template-rendering-option)
   - [Do I need to adhere to any structure or standard?](#do-i-need-to-adhere-to-any-structure-or-standard)
@@ -130,6 +131,48 @@ In the [Block definition](#block-definition) example in this page, we have the `
 <?php foreach ($controller->getItems() as $item) : ?>
     <p><?php echo $item['title']; ?></p>
 <?php endforeach; ?>
+```
+
+## Fields
+
+You can define your ACF fields in your Block by returning an array of fields in the `registerFields` method.
+
+### Simple array
+
+Read more [here](https://www.advancedcustomfields.com/resources/register-fields-via-php/#example).
+
+```php
+protected function registerFields(): array
+{
+    return [
+        // Any valid field settings
+    ];
+}
+```
+
+### ACF Builder
+
+```php
+protected function registerFields(): array
+{
+    $testimonial = new FieldsBuilder('testimonial');
+
+    $testimonial
+        ->setLocation('block', '==', 'acf/testimonial');
+
+    $testimonial
+        ->addText('quote')
+        ->addText('cite')
+        ->addRepeater('list_items')
+            ->addText('list_item')
+            ->addTrueFalse('enabled', [
+                'ui' => 1,
+                'default_value' => 1,
+            ])
+        ->endRepeater();
+
+    return $testimonial->build();
+}
 ```
 
 ## FAQ
