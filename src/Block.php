@@ -117,11 +117,11 @@ class Block
         $this->name     = Util::camelToKebab(basename($block_path, '.php'));
 
         // User definitions.
-        $this->enabled  = $settings['enabled'] ?? true;
-        $this->dir      = $settings['dir'] ?? $directory_path;
-        $this->icon     = $settings['icon'] ?? apply_filters('acf_gutenblock_builder/default_icon', 'admin-generic');
+        $this->enabled = $settings['enabled'] ?? true;
+        $this->dir     = $settings['dir'] ?? $directory_path;
+        $this->icon    = $settings['icon'] ?? apply_filters('acf_gutenblock_builder/default_icon', 'admin-generic');
 
-        $details = apply_filters('acf_gutenblock_builder/block_details', [
+        $settings = apply_filters('acf_gutenblock_builder/block_settings', [
             'title'       => $settings['title'],
             'description' => $settings['description'],
             'category'    => $settings['category'],
@@ -129,11 +129,11 @@ class Block
             'supports'    => $this->supports,
         ], $this->name);
 
-        $this->title       = $details['title'];
-        $this->description = $details['description'];
-        $this->category    = $details['category'];
-        $this->icon        = $details['icon'];
-        $this->supports    = $details['supports'];
+        $this->title       = $settings['title'];
+        $this->description = $settings['description'];
+        $this->category    = $settings['category'];
+        $this->icon        = $settings['icon'];
+        $this->supports    = $settings['supports'];
 
         // Set ACF Fields to the block.
         $this->fields = $this->registerFields();
