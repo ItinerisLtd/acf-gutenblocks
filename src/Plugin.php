@@ -28,7 +28,7 @@ final class Plugin
     public function getInitializables(): array
     {
         return apply_filters(
-            'acf_gutenblock_builder/get_initializables',
+            'acf_gutenblocks/get_initializables',
             $this->initializables
         );
     }

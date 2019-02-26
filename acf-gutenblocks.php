@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     ACF Gutenblock Builder
+ * Plugin Name:     ACF Gutenblocks
  * Plugin URI:      https://github.com/ItinerisLtd/acf-gutenblocks
  * Description:     Easily create Gutenberg Blocks with Advanced Custom Fields
  * Version:         0.1.0
@@ -23,7 +23,7 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
 }
 
 add_action('acf/init', function (): void {
-    $blocks = apply_filters('acf_gutenblock_builder/blocks', []);
+    $blocks = apply_filters('acf_gutenblocks/blocks', []);
 
     if (empty($blocks)) {
         return;
