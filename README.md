@@ -22,6 +22,13 @@ Easily create Gutenberg Blocks with Advanced Custom Fields.
         - [AbstractBladeBlock](#abstractbladeblock)
 - [Controller](#controller)
 - [Fields](#fields)
+- [Filters](#filters)
+  - [acf_gutenblocks/blocks](#acf_gutenblocks/blocks---array-blocks)
+  - [acf_gutenblocks/get_initializables](#acf_gutenblocks/get_initializables---array-$initializables)
+  - [acf_gutenblocks/render_block_frontend_path](#acf_gutenblocks/render_block_frontend_path---string-$path-block-$block)
+  - [acf_gutenblocks/render_block_html_output](#acf_gutenblocks/render_block_html_output---string-$html-block-$block)
+  - [acf_gutenblocks/default_icon](#acf_gutenblocks/default_icon---string-$icon)
+  - [acf_gutenblocks/block_settings](#acf_gutenblocks/block_settings---array-$settings-string-$name)
 - [FAQ](#faq)
   - [Can I use a different template rendering option?](#can-i-use-a-different-template-rendering-option)
   - [Do I need to adhere to any structure or standard?](#do-i-need-to-adhere-to-any-structure-or-standard)
@@ -176,6 +183,32 @@ protected function registerFields(): array
     return $testimonial->build();
 }
 ```
+
+## Filters
+
+### `acf_gutenblocks/blocks` - `(array $blocks)`
+
+The Block Loader. Use this to load and register your Block classes.
+
+### `acf_gutenblocks/get_initializables` - `(array $initializables)`
+
+Called before looping Blocks and checking if they are valid to load.
+
+### `acf_gutenblocks/render_block_frontend_path` - `(string $path, Block $block)`
+
+Used to change the frontend view path.
+
+### `acf_gutenblocks/render_block_html_output` - `(string $html, Block $block)`
+
+For use with `AbstractBlock`. Allows manipulating the frontend view HTML after being included.
+
+### `acf_gutenblocks/default_icon` - `(string $icon)`
+
+Used to change the default icon.
+
+### `acf_gutenblocks/block_settings` - `(array $settings, string $name)`
+
+Change the ACF Block settings registered in the Block before initialising it.
 
 ## FAQ
 
