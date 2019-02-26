@@ -119,9 +119,9 @@ class Block
         // User definitions.
         $this->enabled = $settings['enabled'] ?? true;
         $this->dir     = $settings['dir'] ?? $directory_path;
-        $this->icon    = $settings['icon'] ?? apply_filters('acf_gutenblock_builder/default_icon', 'admin-generic');
+        $this->icon    = $settings['icon'] ?? apply_filters('acf_gutenblocks/default_icon', 'admin-generic');
 
-        $settings = apply_filters('acf_gutenblock_builder/block_settings', [
+        $settings = apply_filters('acf_gutenblocks/block_settings', [
             'title'       => $settings['title'],
             'description' => $settings['description'],
             'category'    => $settings['category'],

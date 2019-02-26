@@ -58,10 +58,10 @@ $ composer require itinerisltd/acf-gutenblocks
         └── Testimonial.php # Block constructor and controller
   ```
 
-4. Register your Block by appending the Block class name as a string to the `acf_gutenblock_builder/blocks` filter
+4. Register your Block by appending the Block class name as a string to the `acf_gutenblocks/blocks` filter
 
 ```php
-add_filter('acf_gutenblock_builder/blocks', function (array $blocks): array {
+add_filter('acf_gutenblocks/blocks', function (array $blocks): array {
     $new_blocks = [
         Testimonial::class,
     ];

@@ -21,7 +21,7 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
     public function renderBlockCallback(array $block): void
     {
         $frontend = apply_filters(
-            'acf_gutenblock_builder/render_block_frontend_path',
+            'acf_gutenblocks/render_block_frontend_path',
             "{$this->dir}/views/frontend{$this->fileExtension()}",
             $this
         );
