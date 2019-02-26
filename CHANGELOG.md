@@ -1,8 +1,16 @@
 # Change Log
 
+## [0.2.0](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.2.0) (2019-02-26)
+[Full Changelog](https://github.com/ItinerisLtd/acf-gutenblocks/compare/0.1.0...0.2.0)
+
+**Merged pull requests:**
+
+- Incorrect package name [\#9](https://github.com/ItinerisLtd/acf-gutenblocks/pull/9) ([codepuncher](https://github.com/codepuncher))
+
 ## [0.1.0](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.1.0) (2019-02-26)
 **Merged pull requests:**
 
+- Version bump 0.1.0 [\#8](https://github.com/ItinerisLtd/acf-gutenblocks/pull/8) ([codepuncher](https://github.com/codepuncher))
 - Add changelog generator file [\#7](https://github.com/ItinerisLtd/acf-gutenblocks/pull/7) ([codepuncher](https://github.com/codepuncher))
 - Add license info [\#6](https://github.com/ItinerisLtd/acf-gutenblocks/pull/6) ([codepuncher](https://github.com/codepuncher))
 - Add Fields information [\#3](https://github.com/ItinerisLtd/acf-gutenblocks/pull/3) ([codepuncher](https://github.com/codepuncher))
