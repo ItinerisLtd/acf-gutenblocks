@@ -22,9 +22,18 @@ Easily create Gutenberg Blocks with Advanced Custom Fields.
         - [AbstractBladeBlock](#abstractbladeblock)
 - [Controller](#controller)
 - [Fields](#fields)
+- [Filters](#filters)
+  - [acf_gutenblocks/blocks](#acf_gutenblocks/blocks---array-blocks)
+  - [acf_gutenblocks/get_initializables](#acf_gutenblocks/get_initializables---array-$initializables)
+  - [acf_gutenblocks/render_block_frontend_path](#acf_gutenblocks/render_block_frontend_path---string-$path-block-$block)
+  - [acf_gutenblocks/render_block_html_output](#acf_gutenblocks/render_block_html_output---string-$html-block-$block)
+  - [acf_gutenblocks/default_icon](#acf_gutenblocks/default_icon---string-$icon)
+  - [acf_gutenblocks/block_settings](#acf_gutenblocks/block_settings---array-$settings-string-$name)
 - [FAQ](#faq)
   - [Can I use a different template rendering option?](#can-i-use-a-different-template-rendering-option)
   - [Do I need to adhere to any structure or standard?](#do-i-need-to-adhere-to-any-structure-or-standard)
+  - [Why not load all Blocks from a given directory? It's much easier!](#why-not-load-all-blocks-from-a-given-directory-its-much-easier)
+  - [My Blade template doesn't load.](#my-blade-template-doesnt-load)
 - [Author Information](#author-information)
 - [Feedback](#feedback)
 - [Change log](#change-log)
@@ -175,6 +184,32 @@ protected function registerFields(): array
 }
 ```
 
+## Filters
+
+### `acf_gutenblocks/blocks` - `(array $blocks)`
+
+The Block Loader. Use this to load and register your Block classes.
+
+### `acf_gutenblocks/get_initializables` - `(array $initializables)`
+
+Called before looping Blocks and checking if they are valid to load.
+
+### `acf_gutenblocks/render_block_frontend_path` - `(string $path, Block $block)`
+
+Used to change the frontend view path.
+
+### `acf_gutenblocks/render_block_html_output` - `(string $html, Block $block)`
+
+For use with `AbstractBlock`. Allows manipulating the frontend view HTML after being included.
+
+### `acf_gutenblocks/default_icon` - `(string $icon)`
+
+Used to change the default icon.
+
+### `acf_gutenblocks/block_settings` - `(array $settings, string $name)`
+
+Change the ACF Block settings registered in the Block before initialising it.
+
 ## FAQ
 
 ### Can I use a different template rendering option?
@@ -184,6 +219,17 @@ You could make a copy of `AbstractBlock`, rename it and define your own `renderB
 ### Do I need to adhere to any structure or standard?
 
 You can manage your Blocks any way you wish. This README will use our [preferred approach](#usage) of strict typing and the directory structure.
+
+### Why not load all Blocks from a given directory? It's much easier!
+
+Using directory scanning options like `glob` and `DirectoryIterator` (or other Iterators) will have a performance impact within your application.
+There are many reasons for that, but the most simple ones are that they take arguments that must be read and dealt with before getting to the actual directory scanning.
+
+Manually loading your Blocks also means that you as a developer are more aware of what you are loading and can do things like conditional logic of loading your Blocks.
+
+### My Blade template doesn't load.
+
+Check your PHP error logs and that your installation is [valid](https://github.com/ItinerisLtd/acf-gutenblocks/blob/fe06055e1d0c48c6c0837586042e1146d3d6a8a8/src/AbstractBladeBlock.php#L16-L19) for use with [Sage](https://roots.io/sage).
 
 ## Author Information
 
