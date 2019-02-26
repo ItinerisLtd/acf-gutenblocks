@@ -25,6 +25,8 @@ Easily create Gutenberg Blocks with Advanced Custom Fields.
 - [FAQ](#faq)
   - [Can I use a different template rendering option?](#can-i-use-a-different-template-rendering-option)
   - [Do I need to adhere to any structure or standard?](#do-i-need-to-adhere-to-any-structure-or-standard)
+  - [Why not load all Blocks from a given directory? It's much easier!](#why-not-load-all-blocks-from-a-given-directory-its-much-easier)
+  - [My Blade template doesn't load.](#my-blade-template-doesnt-load)
 - [Author Information](#author-information)
 - [Feedback](#feedback)
 - [Change log](#change-log)
@@ -184,6 +186,17 @@ You could make a copy of `AbstractBlock`, rename it and define your own `renderB
 ### Do I need to adhere to any structure or standard?
 
 You can manage your Blocks any way you wish. This README will use our [preferred approach](#usage) of strict typing and the directory structure.
+
+### Why not load all Blocks from a given directory? It's much easier!
+
+Using directory scanning options like `glob` and `DirectoryIterator` (or other Iterators) will have a performance impact within your application.
+There are many reasons for that, but the most simple ones are that they take arguments that must be read and dealt with before getting to the actual directory scanning.
+
+Manually loading your Blocks also means that you as a developer are more aware of what you are loading and can do things like conditional logic of loading your Blocks.
+
+### My Blade template doesn't load.
+
+Check your PHP error logs and that your installation is [valid](https://github.com/ItinerisLtd/acf-gutenblocks/blob/fe06055e1d0c48c6c0837586042e1146d3d6a8a8/src/AbstractBladeBlock.php#L16-L19) for use with [Sage](https://roots.io/sage).
 
 ## Author Information
 
