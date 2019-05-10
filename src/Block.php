@@ -127,6 +127,7 @@ class Block
             'category'    => $settings['category'],
             'icon'        => $this->icon,
             'supports'    => $this->supports,
+            'post_types' => $settings['post_types'],
         ], $this->name);
 
         $this->title       = $settings['title'];
@@ -134,6 +135,7 @@ class Block
         $this->category    = $settings['category'];
         $this->icon        = $settings['icon'];
         $this->supports    = $settings['supports'];
+        $this->post_types  = $settings['post_types'];
 
         // Set ACF Fields to the block.
         $this->fields = $this->registerFields();
