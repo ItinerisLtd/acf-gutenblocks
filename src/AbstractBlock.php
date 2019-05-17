@@ -35,7 +35,11 @@ abstract class AbstractBlock extends Block implements InitializableInterface
         }
 
         $block['slug'] = str_replace('acf/', '', $block['name']);
-        $block['classes'] = implode(' ', [$block['slug'], $block['className'], $block['align']]);
+        $block['classes'] = implode(' ', [
+            $block['slug'],
+            array_key_exists('className', $block) ? $block['className'] : '',
+            array_key_exists('align', $block) ? $block['align'] : '',
+        ]);
 
         $controller = $this;
 

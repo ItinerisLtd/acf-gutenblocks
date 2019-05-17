@@ -29,8 +29,8 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
         $block['slug'] = str_replace('acf/', '', $block['name']);
         $block['classes'] = Util::sanitizeHtmlClasses([
             $block['slug'],
-            $block['className'],
-            $block['align'],
+            array_key_exists('className', $block) ? $block['className'] : '',
+            array_key_exists('align', $block) ? $block['align'] : '',
         ]);
 
         // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
