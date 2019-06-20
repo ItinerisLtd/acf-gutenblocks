@@ -129,6 +129,12 @@ Extend from this class to register a vanilla PHP template.
 
 If your project uses the [Sage](https://roots.io/sage) theme, you can take advantage of Blade templating by extending from this class (in future, [Sage](https://roots.io/sage) will be optional).
 
+The `isValid` method will look for `\App\template`. If you're in a Sage environment where that doesn't exist (i.e. Sage 10), you can use the `acf_gutenblocks/blade_engine_callable` filter to return a different callable. 
+
+```php
+add_filter('acf_gutenblocks/blade_engine_callable', function($callable) { return '\Roots\view'; });
+```
+
 ## Controller
 
 Your Block constructor class is available to your template via `$controller`. This allows you to create truly advanced Blocks by organising all of your functional code and logic into a place where you can take more advantage of an OOP approach.

@@ -13,9 +13,19 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
         return '.blade.php';
     }
 
+    public function getBladeEngineCallable()
+    {
+        return apply_filters(
+            'acf_gutenblocks/blade_engine_callable',
+            '\App\template',
+            "{$this->dir}/views/frontend{$this->fileExtension()}",
+            $this
+        );
+    }
+
     public function isValid(): bool
     {
-        return function_exists('\App\template');
+        return function_exists($this->getBladeEngineCallable());
     }
 
     public function renderBlockCallback(array $block): void
@@ -34,7 +44,7 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
         ]);
 
         // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
-        echo template($frontend, [
+        echo call_user_func($this->getBladeEngineCallable(), $frontend, [
             'block' => $block,
             'controller' => $this,
         ]);
