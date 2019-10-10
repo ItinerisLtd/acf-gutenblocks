@@ -1,10 +1,29 @@
 # Change Log
 
+## [0.2.1](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.2.1) (2019-10-10)
+[Full Changelog](https://github.com/ItinerisLtd/acf-gutenblocks/compare/0.2.0...0.2.1)
+
+**Closed issues:**
+
+- PHP Fatal error:  Uncaught Symfony\Component\Debug\Exception\FatalThrowableError: Argument 1 passed to Itineris\AcfGutenblocks\Util::Itineris\AcfGutenblocks\{closure}\(\) must be of the type string, null given in /dom6319/wp-content/plugins/acf-gutenblocks/src/Util.php:16 [\#21](https://github.com/ItinerisLtd/acf-gutenblocks/issues/21)
+- Need to use default post\_types when none specified by user [\#18](https://github.com/ItinerisLtd/acf-gutenblocks/issues/18)
+- Exception in AbstractBladeBlock with ACF 5.8 final [\#16](https://github.com/ItinerisLtd/acf-gutenblocks/issues/16)
+- Adding blocks to CPTs [\#13](https://github.com/ItinerisLtd/acf-gutenblocks/issues/13)
+- why would you `add` a disabled block? [\#4](https://github.com/ItinerisLtd/acf-gutenblocks/issues/4)
+
+**Merged pull requests:**
+
+- Use default post\_types if not set [\#19](https://github.com/ItinerisLtd/acf-gutenblocks/pull/19) ([lukasbesch](https://github.com/lukasbesch))
+- Fixed blade block for empty block classes \#16 [\#17](https://github.com/ItinerisLtd/acf-gutenblocks/pull/17) ([tbruckmaier](https://github.com/tbruckmaier))
+- Block: Allow customizing `post\_types` [\#14](https://github.com/ItinerisLtd/acf-gutenblocks/pull/14) ([TangRufus](https://github.com/TangRufus))
+- Readme [\#11](https://github.com/ItinerisLtd/acf-gutenblocks/pull/11) ([codepuncher](https://github.com/codepuncher))
+
 ## [0.2.0](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.2.0) (2019-02-26)
 [Full Changelog](https://github.com/ItinerisLtd/acf-gutenblocks/compare/0.1.0...0.2.0)
 
 **Merged pull requests:**
 
+- Version bump 0.2.0 [\#10](https://github.com/ItinerisLtd/acf-gutenblocks/pull/10) ([codepuncher](https://github.com/codepuncher))
 - Incorrect package name [\#9](https://github.com/ItinerisLtd/acf-gutenblocks/pull/9) ([codepuncher](https://github.com/codepuncher))
 
 ## [0.1.0](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.1.0) (2019-02-26)

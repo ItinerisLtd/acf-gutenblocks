@@ -3,7 +3,7 @@
  * Plugin Name:     ACF Gutenblocks
  * Plugin URI:      https://github.com/ItinerisLtd/acf-gutenblocks
  * Description:     Easily create Gutenberg Blocks with Advanced Custom Fields
- * Version:         0.2.0
+ * Version:         0.2.1
  * Author:          Itineris Limited
  * Author URI:      https://itineris.co.uk
  * Text Domain:     acf-gutenblocks

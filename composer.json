@@ -1,7 +1,7 @@
 {
   "name": "itinerisltd/acf-gutenblocks",
-  "description": "Easily create Gutenberg Blocks with Advanced Custom Fields",
   "type": "wordpress-plugin",
+  "description": "Easily create Gutenberg Blocks with Advanced Custom Fields",
   "keywords": [
     "acf",
     "advanced",
@@ -32,8 +32,8 @@
     "composer/installers": "^1.5"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-master",
-    "itinerisltd/itineris-wp-coding-standards": "^0.2"
+    "itinerisltd/itineris-wp-coding-standards": "^0.2",
+    "roave/security-advisories": "dev-master"
   },
   "config": {
     "preferred-install": {
@@ -52,15 +52,15 @@
     }
   },
   "scripts": {
-    "style:check": "phpcs",
-    "style:fix": "phpcbf",
     "pretag": [
       "composer update --no-suggest",
       "@check-style",
       "composer normalize",
-      "doctoc README.md",
+      "npx doctoc README.md",
       "github_changelog_generator --no-verbose"
-    ]
+    ],
+    "style:check": "phpcs",
+    "style:fix": "phpcbf"
   },
   "support": {
     "email": "hello@itineris.co.uk",
