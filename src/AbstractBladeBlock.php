@@ -44,7 +44,7 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
         ]);
 
         // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
-        echo call_user_func($this->getBladeEngineCallable(), $frontend, [
+        echo $this->getBladeEngineCallable()($frontend, [
             'block' => $block,
             'controller' => $this,
         ]);
