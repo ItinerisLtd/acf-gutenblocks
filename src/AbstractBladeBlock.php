@@ -13,7 +13,7 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
         return '.blade.php';
     }
 
-    public function getBladeEngineCallable()
+    public function getBladeEngineCallable(): string
     {
         return apply_filters(
             'acf_gutenblocks/blade_engine_callable',
