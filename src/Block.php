@@ -127,7 +127,7 @@ class Block
             'category'    => $settings['category'],
             'icon'        => $this->icon,
             'supports'    => $this->supports,
-            'post_types' => $settings['post_types'],
+            'post_types'  => $settings['post_types'] ?? $this->post_types,
         ], $this->name);
 
         $this->title       = $settings['title'];
