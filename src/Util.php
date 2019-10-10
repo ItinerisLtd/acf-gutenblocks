@@ -14,7 +14,7 @@ class Util
     public static function sanitizeHtmlClasses(array $classes): string
     {
         return implode(' ', array_map(function ($class) : string {
-            return sanitize_html_class((string)$class);
+            return sanitize_html_class((string) $class);
         }, $classes));
     }
 }
