@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.3.0](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.3.0) (2019-10-10)
+[Full Changelog](https://github.com/ItinerisLtd/acf-gutenblocks/compare/0.2.1...0.3.0)
+
+**Merged pull requests:**
+
+- Allow for filtering of Blade engine function [\#20](https://github.com/ItinerisLtd/acf-gutenblocks/pull/20) ([alwaysblank](https://github.com/alwaysblank))
+
 ## [0.2.1](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.2.1) (2019-10-10)
 [Full Changelog](https://github.com/ItinerisLtd/acf-gutenblocks/compare/0.2.0...0.2.1)
 
@@ -13,6 +20,7 @@
 
 **Merged pull requests:**
 
+- Version bump 0.2.1 [\#22](https://github.com/ItinerisLtd/acf-gutenblocks/pull/22) ([codepuncher](https://github.com/codepuncher))
 - Use default post\_types if not set [\#19](https://github.com/ItinerisLtd/acf-gutenblocks/pull/19) ([lukasbesch](https://github.com/lukasbesch))
 - Fixed blade block for empty block classes \#16 [\#17](https://github.com/ItinerisLtd/acf-gutenblocks/pull/17) ([tbruckmaier](https://github.com/tbruckmaier))
 - Block: Allow customizing `post\_types` [\#14](https://github.com/ItinerisLtd/acf-gutenblocks/pull/14) ([TangRufus](https://github.com/TangRufus))
