@@ -15,7 +15,7 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
 
     public function getBladeEngineCallable(): string
     {
-        return apply_filters(
+        return (string) apply_filters(
             'acf_gutenblocks/blade_engine_callable',
             '\App\template',
             "{$this->dir}/views/frontend{$this->fileExtension()}",
