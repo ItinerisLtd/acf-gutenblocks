@@ -35,7 +35,7 @@ abstract class AbstractBlock extends Block implements InitializableInterface
         }
 
         $block['slug'] = str_replace('acf/', '', $block['name']);
-        $block['classes'] = implode(' ', [
+        $block['classes'] = Util::sanitizeHtmlClasses([
             $block['slug'],
             $block['className'] ?? '',
             $block['align'] ?? '',
