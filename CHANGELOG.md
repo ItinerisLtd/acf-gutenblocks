@@ -1,10 +1,26 @@
 # Change Log
 
+## [0.3.1](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.3.1) (2019-10-14)
+[Full Changelog](https://github.com/ItinerisLtd/acf-gutenblocks/compare/0.3.0...0.3.1)
+
+**Closed issues:**
+
+- Plain PHP Template doesn't setup block classes like Blade [\#26](https://github.com/ItinerisLtd/acf-gutenblocks/issues/26)
+- Return type not guaranteed to be string. [\#25](https://github.com/ItinerisLtd/acf-gutenblocks/issues/25)
+- Redundant function import [\#24](https://github.com/ItinerisLtd/acf-gutenblocks/issues/24)
+
+**Merged pull requests:**
+
+- Use Util::sanitizeHtmlClasses [\#29](https://github.com/ItinerisLtd/acf-gutenblocks/pull/29) ([codepuncher](https://github.com/codepuncher))
+- Remove redundant function import [\#28](https://github.com/ItinerisLtd/acf-gutenblocks/pull/28) ([codepuncher](https://github.com/codepuncher))
+- Cast return value to string [\#27](https://github.com/ItinerisLtd/acf-gutenblocks/pull/27) ([codepuncher](https://github.com/codepuncher))
+
 ## [0.3.0](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.3.0) (2019-10-10)
 [Full Changelog](https://github.com/ItinerisLtd/acf-gutenblocks/compare/0.2.1...0.3.0)
 
 **Merged pull requests:**
 
+- Version bump 0.3.0 [\#23](https://github.com/ItinerisLtd/acf-gutenblocks/pull/23) ([codepuncher](https://github.com/codepuncher))
 - Allow for filtering of Blade engine function [\#20](https://github.com/ItinerisLtd/acf-gutenblocks/pull/20) ([alwaysblank](https://github.com/alwaysblank))
 
 ## [0.2.1](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.2.1) (2019-10-10)
