@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Itineris\AcfGutenblocks;
 
-use function App\template;
-
 abstract class AbstractBladeBlock extends Block implements InitializableInterface
 {
     public function fileExtension(): string
