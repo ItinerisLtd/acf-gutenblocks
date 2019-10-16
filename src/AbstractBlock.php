@@ -43,6 +43,8 @@ abstract class AbstractBlock extends Block implements InitializableInterface
 
         $controller = $this;
 
+        extract($this->with());
+
         ob_start();
 
         // TODO: Check for remote file inclusion (WP VIP).
