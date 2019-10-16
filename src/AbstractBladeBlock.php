@@ -40,11 +40,15 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
             $block['className'] ?? '',
             $block['align'] ?? '',
         ]);
+        $template_data = array_merge(
+            [
+                'block' => $block,
+                'controller' => $this,
+            ],
+            $this->with(),
+        );
 
         // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
-        echo $this->getBladeEngineCallable()($frontend, [
-            'block' => $block,
-            'controller' => $this,
-        ]);
+        echo $this->getBladeEngineCallable()($frontend, $template_data);
     }
 }
