@@ -20,7 +20,7 @@ Easily create Gutenberg Blocks with Advanced Custom Fields.
   - [Block constructors](#block-constructors)
     - [`AbstractBlock`](#abstractblock)
     - [`AbstractBladeBlock`](#abstractbladeblock)
-- [Controller](#controller)
+- [Template data](#template-data)
 - [Fields](#fields)
   - [Simple array](#simple-array)
   - [ACF Builder](#acf-builder)
@@ -72,9 +72,13 @@ $ composer require itinerisltd/acf-gutenblocks
 4. Register your Block by appending the Block class name as a string to the `acf_gutenblocks/blocks` filter
 
 ```php
+use Fully\Qualified\Namespace\Testimonial;
+use App\Blocks\Banner;
+
 add_filter('acf_gutenblocks/blocks', function (array $blocks): array {
     $new_blocks = [
         Testimonial::class,
+        Banner::class,
     ];
     return array_merge($blocks, $new_blocks);
 });
@@ -101,22 +105,22 @@ class Testimonial extends AbstractBlock
     public function __construct()
     {
         parent::__construct([
-            'title' => __('Testimonial', 'fabric'),
-            'description' => __('Testimonial description', 'fabric'),
+            'title' => __('Testimonial', 'sage'),
+            'description' => __('Testimonial description', 'sage'),
             'category' => 'formatting',
+            'post_types' => ['post', 'page'],
             // Other valid acf_register_block() settings
         ]);
     }
 
-    public function getItems(): array
+    /**
+     * Make $items available to your template
+     */
+    public function with(): array
     {
-        $items = [];
-        foreach (get_field('list_items') as $item) {
-            if ($item['enabled']) {
-                $items[] = $item['list_item'];
-            }
-        }
-        return $items;
+        return [
+            'items' => (array) get_field('items'),
+        ];
     }
 }
 ```
@@ -131,21 +135,35 @@ Extend from this class to register a vanilla PHP template.
 
 If your project uses the [Sage](https://roots.io/sage) theme, you can take advantage of Blade templating by extending from this class (in future, [Sage](https://roots.io/sage) will be optional).
 
-The `isValid` method will look for `\App\template`. If you're in a Sage environment where that doesn't exist (i.e. Sage 10), you can use the `acf_gutenblocks/blade_engine_callable` filter to return a different callable. 
+The `isValid` method will look for `\App\template`. If you're in a Sage environment where that doesn't exist (i.e. Sage 10), you can use the `acf_gutenblocks/blade_engine_callable` filter to return a different callable.
 
 ```php
-add_filter('acf_gutenblocks/blade_engine_callable', function($callable) { return '\Roots\view'; });
+add_filter('acf_gutenblocks/blade_engine_callable', function (string $callable): string {
+    return '\Roots\view';
+});
 ```
 
-## Controller
+## Template data
 
 Your Block constructor class is available to your template via `$controller`. This allows you to create truly advanced Blocks by organising all of your functional code and logic into a place where you can take more advantage of an OOP approach.
 
-In the [Block definition](#block-definition) example in this page, we have the `getItems` method which can be used in the template like so:
+Additionally, the `with()` method lets you pass variables to your template.
+To create a variable for your template, create a key+value pair in the `with()` method:
+
+```php
+public function with(): array
+{
+    return [
+        'items' => (array) get_field('items'),
+    ];
+}
+```
+
+Using `$items` in your template:
 
 ```php
 # Blocks/Testimonial/views/frontend.php
-<?php foreach ($controller->getItems() as $item) : ?>
+<?php foreach ($items as $item) : ?>
     <p><?php echo $item['title']; ?></p>
 <?php endforeach; ?>
 ```
