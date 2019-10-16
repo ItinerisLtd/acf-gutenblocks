@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.4.0](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.4.0) (2019-10-16)
+[Full Changelog](https://github.com/ItinerisLtd/acf-gutenblocks/compare/0.3.1...0.4.0)
+
+**Closed issues:**
+
+- Allow passing variables to templates [\#31](https://github.com/ItinerisLtd/acf-gutenblocks/issues/31)
+
+**Merged pull requests:**
+
+- Extract user data to templates [\#33](https://github.com/ItinerisLtd/acf-gutenblocks/pull/33) ([codepuncher](https://github.com/codepuncher))
+
 ## [0.3.1](https://github.com/ItinerisLtd/acf-gutenblocks/tree/0.3.1) (2019-10-14)
 [Full Changelog](https://github.com/ItinerisLtd/acf-gutenblocks/compare/0.3.0...0.3.1)
 
@@ -11,6 +22,7 @@
 
 **Merged pull requests:**
 
+- Version bump 0.3.1 [\#30](https://github.com/ItinerisLtd/acf-gutenblocks/pull/30) ([codepuncher](https://github.com/codepuncher))
 - Use Util::sanitizeHtmlClasses [\#29](https://github.com/ItinerisLtd/acf-gutenblocks/pull/29) ([codepuncher](https://github.com/codepuncher))
 - Remove redundant function import [\#28](https://github.com/ItinerisLtd/acf-gutenblocks/pull/28) ([codepuncher](https://github.com/codepuncher))
 - Cast return value to string [\#27](https://github.com/ItinerisLtd/acf-gutenblocks/pull/27) ([codepuncher](https://github.com/codepuncher))
