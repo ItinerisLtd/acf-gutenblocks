@@ -306,6 +306,15 @@ class Block
         ];
     }
 
+	/**
+	 * Make variables available to the template.
+	 *
+	 * @return array
+	 */
+	public function with(): array
+	{
+		return [];
+	}
 
     public function init(): void
     {
