@@ -6,6 +6,8 @@ namespace Itineris\AcfGutenblocks;
 
 abstract class AbstractBladeBlock extends Block implements InitializableInterface
 {
+    abstract public function with(array $template_data): array;
+
     public function fileExtension(): string
     {
         return '.blade.php';
