@@ -28,7 +28,7 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
         return function_exists($this->getBladeEngineCallable());
     }
 
-    public function renderBlockCallback(array $block, string $content = '', bool $is_preview = false, int $post_id = 0 ): void
+    public function renderBlockCallback(array $block, string $content = '', bool $is_preview = false, int $post_id = 0): void
     {
         $frontend = apply_filters(
             'acf_gutenblocks/render_block_frontend_path',
