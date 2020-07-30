@@ -45,7 +45,7 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
                 'block' => $block,
                 'controller' => $this,
             ],
-            $this->with(),
+            $this->with()
         );
 
         // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
