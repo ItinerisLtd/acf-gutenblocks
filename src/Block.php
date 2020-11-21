@@ -306,6 +306,16 @@ class Block
         ];
     }
 
+    public function getTemplateData(array $block, bool $is_preview = false, int $post_id = 0): array
+    {
+        $template_data = [
+            'block' => $block,
+            'controller' => $this,
+            'is_preview' => $is_preview,
+            'post_id' => $post_id,
+        ];
+        return array_merge($template_data, $this->with($template_data));
+    }
 
     public function init(): void
     {

@@ -6,6 +6,8 @@ namespace Itineris\AcfGutenblocks;
 
 abstract class AbstractBladeBlock extends Block implements InitializableInterface
 {
+    abstract public function with(array $template_data): array;
+
     public function fileExtension(): string
     {
         return '.blade.php';
@@ -26,7 +28,7 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
         return function_exists($this->getBladeEngineCallable());
     }
 
-    public function renderBlockCallback(array $block): void
+    public function renderBlockCallback(array $block, string $content = '', bool $is_preview = false, int $post_id = 0): void
     {
         $frontend = apply_filters(
             'acf_gutenblocks/render_block_frontend_path',
@@ -40,13 +42,8 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
             $block['className'] ?? '',
             $block['align'] ?? '',
         ]);
-        $template_data = array_merge(
-            [
-                'block' => $block,
-                'controller' => $this,
-            ],
-            $this->with(),
-        );
+
+        $template_data = $this->getTemplateData($block, $is_preview, $post_id);
 
         // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
         echo $this->getBladeEngineCallable()($frontend, $template_data);
