@@ -9,9 +9,6 @@
     <!-- Show progress and sniff codes in all reports -->
     <arg value="sp"/>
 
-    <!-- Install custom rulesets -->
-    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/automattic/vipwpcs,vendor/itinerisltd/itineris-wp-coding-standards"/>
-
     <!-- Use Itineris WP Coding Standards -->
     <rule ref="Itineris"/>
 
