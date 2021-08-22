@@ -13,6 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Get tag
+        id: get_tag
+        run: echo ::set-output name=value::${GITHUB_REF/refs\/tags\//}
+
       - name: Setup the PHP 7.3 environment on ${{ runner.os }}
         uses: shivammathur/setup-php@v2
         with:
@@ -26,5 +30,5 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          body: Version ${{ github.event.ref }}
+          body: Version ${{ steps.get_tag.value }}
           files: release/acf-gutenblocks.zip
