@@ -51,6 +51,17 @@
       "Itineris\\AcfGutenblocks\\": "src/"
     }
   },
+  "archive": {
+    "exclude": [
+      "*",
+      "!*LICENSE*",
+      "!*.php",
+      "!/README.txt",
+      "!src",
+      "test",
+      "tests"
+    ]
+  },
   "scripts": {
     "pretag": [
       "composer update --no-suggest",
@@ -58,6 +69,12 @@
       "composer normalize",
       "npx doctoc README.md",
       "github_changelog_generator --no-verbose"
+    ],
+    "release:build": [
+      "rm -fr vendor",
+      "composer install --no-dev --prefer-dist --optimize-autoloader --no-suggest",
+      "rm -fr release wordpress",
+      "composer archive --format=zip --dir=release --file=acf-gutenblocks"
     ],
     "style:check": "phpcs",
     "style:fix": "phpcbf"
