@@ -45,7 +45,7 @@ Easily create Gutenberg Blocks with Advanced Custom Fields.
 
 ## Minimum Requirements
 
-- [PHP](https://secure.php.net/manual/en/install.php) >= 7.1
+- [PHP](https://secure.php.net/manual/en/install.php) >= 7.3
 - [WordPress](https://wordpress.org/download/) (preferrably [Bedrock](https://roots.io/bedrock/)) >= 5.0
 - [Advanced Custom Fields](https://www.advancedcustomfields.com/) >= 5.8.0
 
