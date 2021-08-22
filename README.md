@@ -12,7 +12,6 @@ Easily create Gutenberg Blocks with Advanced Custom Fields.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
 - [Minimum Requirements](#minimum-requirements)
 - [Installation](#installation)
 - [Usage](#usage)

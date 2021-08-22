@@ -65,7 +65,7 @@
   "scripts": {
     "pretag": [
       "composer update --no-suggest",
-      "@check-style",
+      "@style:check",
       "composer normalize",
       "npx doctoc README.md",
       "github_changelog_generator --no-verbose"
