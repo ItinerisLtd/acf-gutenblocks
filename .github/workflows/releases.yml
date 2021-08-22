@@ -1,0 +1,30 @@
+name: Releases
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup the PHP 7.3 environment on ${{ runner.os }}
+        uses: shivammathur/setup-php@v2
+        with:
+          # Build with our minimum supported PHP version
+          php-version: '7.3'
+          coverage: xdebug
+
+      - name: Build
+        run: composer run-script release:build
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body: Version ${{ github.event.ref }}
+          files: release/acf-gutenblocks.zip
