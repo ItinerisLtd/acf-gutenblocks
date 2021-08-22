@@ -4,6 +4,7 @@
  * Plugin URI:      https://github.com/ItinerisLtd/acf-gutenblocks
  * Description:     Easily create Gutenberg Blocks with Advanced Custom Fields
  * Version:         0.4.0
+ * Requires PHP:    7.3
  * Author:          Itineris Limited
  * Author URI:      https://itineris.co.uk
  * Text Domain:     acf-gutenblocks
