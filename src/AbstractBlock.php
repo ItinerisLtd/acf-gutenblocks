@@ -43,6 +43,7 @@ abstract class AbstractBlock extends Block implements InitializableInterface
 
         $controller = $this;
 
+        // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
         extract($this->with());
 
         ob_start();
