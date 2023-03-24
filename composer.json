@@ -29,7 +29,7 @@
   ],
   "require": {
     "php": "^7.3",
-    "composer/installers": "^1.5"
+    "composer/installers": "^1.5|^2"
   },
   "require-dev": {
     "itinerisltd/itineris-wp-coding-standards": "^0.4.0",
@@ -39,7 +39,11 @@
     "preferred-install": {
       "*": "dist"
     },
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   },
   "extra": {
     "branch-alias": {
