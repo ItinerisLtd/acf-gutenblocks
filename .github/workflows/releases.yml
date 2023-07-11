@@ -17,11 +17,11 @@ jobs:
         id: get_tag
         run: echo ::set-output name=value::${GITHUB_REF/refs\/tags\//}
 
-      - name: Setup the PHP 7.3 environment on ${{ runner.os }}
+      - name: Setup the PHP 8.0 environment on ${{ runner.os }}
         uses: shivammathur/setup-php@v2
         with:
           # Build with our minimum supported PHP version
-          php-version: '7.3'
+          php-version: '8.0'
           coverage: xdebug
 
       - name: Build
