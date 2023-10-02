@@ -23,6 +23,14 @@ class Block
     protected $title = '';
 
     /**
+     * The blocks fields.
+     *
+     * @since 0.6.0
+     * @var array $fields
+     */
+    protected $fields = [];
+
+    /**
      * The description of the block.
      *
      * @since 0.1.0
