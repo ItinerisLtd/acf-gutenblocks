@@ -103,6 +103,14 @@ class Block
     protected $enabled = true;
 
     /**
+     * The blocks fields.
+     *
+     * @since 0.6.0
+     * @var array $fields
+     */
+    protected $fields = [];
+
+    /**
      * Begin block construction!
      *
      * @since 0.10
