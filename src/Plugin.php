@@ -11,7 +11,7 @@ final class Plugin
      *
      * @var InitializableInterface[]
      */
-    private $initializables = [];
+    private array $initializables = [];
 
     public function add(string ...$initializables): self
     {
@@ -29,7 +29,7 @@ final class Plugin
     {
         return apply_filters(
             'acf_gutenblocks/get_initializables',
-            $this->initializables
+            $this->initializables,
         );
     }
 
