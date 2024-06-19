@@ -17,7 +17,7 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
             'acf_gutenblocks/blade_engine_callable',
             '\App\template',
             "{$this->dir}/views/frontend{$this->fileExtension()}",
-            $this
+            $this,
         );
     }
 
@@ -31,7 +31,7 @@ abstract class AbstractBladeBlock extends Block implements InitializableInterfac
         $frontend = apply_filters(
             'acf_gutenblocks/render_block_frontend_path',
             "{$this->dir}/views/frontend{$this->fileExtension()}",
-            $this
+            $this,
         );
 
         $block['slug'] = str_replace('acf/', '', $block['name']);

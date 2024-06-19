@@ -10,105 +10,92 @@ class Block
      * The directory name of the block.
      *
      * @since 0.1.0
-     * @var string $name
      */
-    protected $name = '';
+    protected string $name = '';
 
     /**
      * The display name of the block.
      *
      * @since 0.1.0
-     * @var string $title
      */
-    protected $title = '';
+    protected string $title = '';
 
     /**
      * The description of the block.
      *
      * @since 0.1.0
-     * @var string $description
      */
-    protected $description;
+    protected string $description;
 
     /**
      * The category this block belongs to.
      *
      * @since 0.1.0
-     * @var string $category
      */
-    protected $category;
+    protected string $category;
 
     /**
      * The icon of this block.
      *
      * @since 0.1.0
-     * @var string $icon
      */
-    protected $icon = '';
+    protected string $icon = '';
 
     /**
      * An array of keywords the block will be found under.
      *
      * @since 0.1.0
-     * @var array $keywords
      */
-    protected $keywords = [];
+    protected array $keywords = [];
 
     /**
      * An array of Post Types the block will be available to.
      *
      * @since 0.1.0
-     * @var array $post_types
      */
-    protected $post_types = ['post', 'page'];
+    protected array $post_types = ['post', 'page'];
 
     /**
      * The default display mode of the block that is shown to the user.
      *
      * @since 0.1.0
-     * @var string $mode
      */
-    protected $mode = 'preview';
+    protected string $mode = 'preview';
 
     /**
      * The block alignment class.
      *
      * @since 0.1.0
-     * @var string $align
      */
-    protected $align = '';
+    protected string $align = '';
 
     /**
      * Features supported by the block.
      *
      * @since 0.1.0
-     * @var array $supports
      */
-    protected $supports = [];
+    protected array $supports = [];
 
     /**
      * The blocks directory path.
      *
      * @since 0.1.0
-     * @var string $dir
      */
-    public $dir;
+    public string $dir;
 
     /**
      * The blocks accessibility.
      *
      * @since 0.1.0
-     * @var boolean $enabled
      */
-    protected $enabled = true;
+    protected bool $enabled = true;
 
     /**
      * The blocks fields.
      *
      * @since 0.6.0
-     * @var array $fields
      */
-    protected $fields = [];
+    protected array $fields = [];
 
     /**
      * Begin block construction!
@@ -153,7 +140,6 @@ class Block
      * Is the block enabled?
      *
      * @since 0.1.0
-     * @return boolean
      */
     public function isEnabled(): bool
     {
@@ -164,7 +150,6 @@ class Block
      * User defined ACF fields
      *
      * @since 0.1.0
-     * @return array
      */
     protected function registerFields(): array
     {
@@ -175,7 +160,6 @@ class Block
      * Get the block ACF fields
      *
      * @since 0.1.0
-     * @return array
      */
     public function getFields(): array
     {
@@ -186,7 +170,6 @@ class Block
      * Get the block name
      *
      * @since 0.1.0
-     * @return string
      */
     public function getName(): string
     {
@@ -197,7 +180,6 @@ class Block
      * Get the block title
      *
      * @since 0.1.0
-     * @return string
      */
     public function getTitle(): string
     {
@@ -208,7 +190,6 @@ class Block
      * Get the block description
      *
      * @since 0.1.0
-     * @return string
      */
     public function getDescription(): string
     {
@@ -219,7 +200,6 @@ class Block
      * Get the block category
      *
      * @since 0.1.0
-     * @return string
      */
     public function getCategory(): string
     {
@@ -230,7 +210,6 @@ class Block
      * Get the block icon
      *
      * @since 0.1.0
-     * @return string
      */
     public function getIcon(): string
     {
@@ -241,7 +220,6 @@ class Block
      * Get the block keywords
      *
      * @since 0.1.0
-     * @return array
      */
     public function getKeywords(): array
     {
@@ -252,7 +230,6 @@ class Block
      * Get the block post types
      *
      * @since 0.1.0
-     * @return array
      */
     public function getPostTypes(): array
     {
@@ -263,7 +240,6 @@ class Block
      * Get the block mode
      *
      * @since 0.1.0
-     * @return string
      */
     public function getMode(): string
     {
@@ -274,7 +250,6 @@ class Block
      * Get the block alignment
      *
      * @since 0.1.0
-     * @return string
      */
     public function getAlignment(): string
     {
@@ -285,7 +260,6 @@ class Block
      * Get featured supported by the block
      *
      * @since 0.1.0
-     * @return array
      */
     public function getSupports(): array
     {
@@ -296,7 +270,6 @@ class Block
      * Get the block registration data
      *
      * @since 0.1.0
-     * @return array
      */
     public function getBlockData(): array
     {
