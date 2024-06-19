@@ -288,10 +288,15 @@ class Block
         ];
     }
 
+    public function getAssets(): void
+    {
+    }
+
     public function init(): void
     {
         $block_data = $this->getBlockData();
         $block_data['render_callback'] = [$this, 'renderBlockCallback'];
+        $block_data['enqueue_assets'] = $this->getAssets();
         $fields = $this->getFields();
 
         acf_register_block($block_data);
