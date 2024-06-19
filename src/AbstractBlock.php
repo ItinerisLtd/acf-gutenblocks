@@ -49,14 +49,12 @@ abstract class AbstractBlock extends Block implements InitializableInterface
         ob_start();
 
         // TODO: Check for remote file inclusion (WP VIP).
-        // phpcs:disable WordPressVIPMinimum.Files.IncludingFile.IncludingFile
+        // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.IncludingFile
         include apply_filters('acf_gutenblocks/render_block_html', $path, $controller);
-        // phpcs:enable
 
         $html = ob_get_clean();
 
-        // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo apply_filters('acf_gutenblocks/render_block_html_output', $html, $controller);
-        // phpcs:enable
     }
 }

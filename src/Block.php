@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Itineris\AcfGutenblocks;
 
+use ReflectionClass;
+
 class Block
 {
     /**
@@ -101,12 +103,11 @@ class Block
      * Begin block construction!
      *
      * @since 0.10
-     * @param array $settings The block definitions.
      */
     public function __construct(array $settings)
     {
         // Path related definitions.
-        $reflection     = new \ReflectionClass($this);
+        $reflection     = new ReflectionClass($this);
         $block_path     = $reflection->getFileName();
         $directory_path = dirname($block_path);
         $this->name     = Util::camelToKebab(basename($block_path, '.php'));
@@ -287,11 +288,20 @@ class Block
         ];
     }
 
+    /**
+     * Callback method to enqueue block assets
+     *
+     * @since 0.6.0
+     */
+    public function enqueueAssets(): void
+    {
+    }
 
     public function init(): void
     {
         $block_data = $this->getBlockData();
         $block_data['render_callback'] = [$this, 'renderBlockCallback'];
+        $block_data['enqueue_assets'] = $this->enqueueAssets();
         $fields = $this->getFields();
 
         acf_register_block($block_data);
