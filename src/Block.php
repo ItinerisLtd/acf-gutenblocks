@@ -310,4 +310,19 @@ class Block
             acf_add_local_field_group($fields);
         }
     }
+
+    /**
+     * Simple function to pretty up our field partial includes.
+     *
+     * @param string $partial
+     * @param array  $data
+     *
+     * @return mixed
+     */
+    protected function getFieldComponent(string $partial, array $data = []): mixed
+    {
+        $partial = str_replace('.', '/', $partial);
+
+        return include __DIR__ . "/Components/{$partial}.php";
+    }
 }
