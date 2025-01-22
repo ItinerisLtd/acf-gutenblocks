@@ -1,5 +1,7 @@
+# yamllint disable-line rule:document-start
 name: Releases
 
+# yamllint disable-line rule:truthy
 on:
   push:
     tags:
@@ -15,7 +17,7 @@ jobs:
 
       - name: Get tag
         id: get_tag
-        run: echo ::set-output name=value::${GITHUB_REF/refs\/tags\//}
+        run: echo "value=${GITHUB_REF/refs\/tags\//}" >> "${GITHUB_OUTPUT}"
 
       - name: Setup the PHP 8.1 environment on ${{ runner.os }}
         uses: shivammathur/setup-php@v2
@@ -30,5 +32,5 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          body: Version ${{ steps.get_tag.value }}
+          body: Version ${{ steps.get_tag.outputs.value }}
           files: release/acf-gutenblocks.zip
