@@ -1,5 +1,4 @@
 version: 2
-
 updates:
   - package-ecosystem: composer
     directory: "/"
@@ -7,3 +6,5 @@ updates:
       interval: daily
       time: "00:00"
       timezone: Europe/London
+    cooldown:
+      default-days: 21
