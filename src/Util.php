@@ -6,6 +6,7 @@ namespace Itineris\AcfGutenblocks;
 
 class Util
 {
+    // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.stringFound -- public API; renaming breaks named arguments.
     public static function camelToKebab(string $string): string
     {
         return strtolower(preg_replace('/(?<!^)[A-Z]/', '-$0', $string));
