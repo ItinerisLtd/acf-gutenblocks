@@ -13,14 +13,14 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
 
       - name: Get tag
         id: get_tag
         run: echo "value=${GITHUB_REF/refs\/tags\//}" >> "${GITHUB_OUTPUT}"
 
       - name: Setup the PHP 8.1 environment on ${{ runner.os }}
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
         with:
           # Build with our minimum supported PHP version
           php-version: '8.1'
@@ -30,7 +30,7 @@ jobs:
         run: composer run-script release:build
 
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
         with:
           body: Version ${{ steps.get_tag.outputs.value }}
           files: release/acf-gutenblocks.zip

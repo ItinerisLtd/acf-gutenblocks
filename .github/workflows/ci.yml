@@ -15,10 +15,10 @@ jobs:
 
     steps:
       - name: Checkout the project
-        uses: actions/checkout@v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
 
       - name: Setup the PHP ${{ matrix.php }} environment on ${{ runner.os }}
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
         with:
           php-version: ${{ matrix.php }}
           coverage: xdebug
@@ -27,7 +27,7 @@ jobs:
         id: composercache
         run: echo "dir=$(composer config cache-files-dir)" >> "${GITHUB_OUTPUT}"
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: ${{ steps.composercache.outputs.dir }}
           # yamllint disable-line rule:line-length
