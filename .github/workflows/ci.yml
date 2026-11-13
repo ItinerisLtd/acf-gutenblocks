@@ -4,6 +4,9 @@ name: CI
 # yamllint disable-line rule:truthy
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   php:
     name: PHP ${{ matrix.php }}
